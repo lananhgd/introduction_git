@@ -26,3 +26,30 @@ if (!empty($_POST)) {
     }
     
 }
+
+// if(isset($name))
+    
+    
+?>
+<div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+        <?php include '../../layout/top.php' ?>
+        <form method="POST">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name">
+                <?php if(isset($error["name"])){ ?>
+                   <p class="text-danger"> <?php echo $error["name"]; ?></p>
+                <?php } ?>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <br>
+                <input type="radio" value="0" name="status" checked>Hết
+                <br>
+                <input type="radio" value="1" name="status">Còn
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <?php include '../../layout/footer.php'; ?>
